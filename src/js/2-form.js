@@ -15,7 +15,12 @@ const form = document.querySelector('.feedback-form');
 if (formData.email === '' || formData.message === '') {
   alert('Fill please all fields');
 }
-
+form.addEventListener('submit', event => {
+  event.preventDefault();
+  console.log(formData);
+  localStorage.clear();
+  form.reset();
+});
 form.addEventListener('input', event => {
   if (event.target.name === 'email') {
     formData.email = event.target.value;
