@@ -68,10 +68,9 @@ const images = [
     description: 'Lighthouse Coast Sea',
   },
 ];
-const div = document.querySelector('.div');
-const ul = document.createElement('ul');
-ul.classList.add('gallery');
 
+const ul = document.querySelector('.gallery');
+const fragment = document.createDocumentFragment();
 images.forEach(items => {
   const li = document.createElement('li');
   li.classList.add('gallery-item');
@@ -89,11 +88,9 @@ images.forEach(items => {
 
   a.appendChild(img);
   li.appendChild(a);
-  ul.appendChild(li);
+  fragment.appendChild(li);
 });
-div.appendChild(ul);
-
+ul.appendChild(fragment);
 new SimpleLightbox('.gallery a', {
-  captionsData: 'alt',
-  captionDelay: 250,
-}).open();
+  /* options */
+});
