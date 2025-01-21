@@ -92,5 +92,7 @@ images.forEach(items => {
 });
 ul.appendChild(fragment);
 new SimpleLightbox('.gallery a', {
-  /* options */
+  captions: true,
+  captionDelay: 250,
+  captionsData: 'alt',
 });
